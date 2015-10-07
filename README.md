@@ -1,4 +1,8 @@
 # Chess
-Chess game with somewhat intelligent computer player.
 
-**UNFINISHED**
+Command line chess game with somewhat intelligent computer player.
+
+![screenshot]
+
+
+[screenshot]: ./screenshot.jpg
