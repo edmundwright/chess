@@ -10,4 +10,9 @@ Command line chess game with somewhat intelligent computer player.
 - Level of truncation customizable to allow computer players of varying intelligences
 - Utilizes multiple levels of class inheritance (see [`Piece` and subclasses](./pieces))
 
+
+## Usage
+
+Run `ruby game.rb` and follow prompts.
+
 [screenshot]: ./screenshot.jpg
