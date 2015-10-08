@@ -1,6 +1,6 @@
-require_relative 'sliding_piece'
-require_relative 'stepping_piece'
-require_relative 'pawn'
+require_relative 'pieces/sliding_piece'
+require_relative 'pieces/stepping_piece'
+require_relative 'pieces/pawn'
 require 'colorize'
 
 class Board
