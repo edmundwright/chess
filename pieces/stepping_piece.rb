@@ -14,24 +14,3 @@ class SteppingPiece < Piece
     moves
   end
 end
-
-class Knight < SteppingPiece
-  DELTAS = [[-2,  1], [-1,  2], [ 1,  2], [ 2,  1],
-                 [ 2, -1], [ 1, -2], [-1, -2], [-2, -1]]
-  REPRESENTATION = {:white => "\u2658", :black => "\u265E"}
-  POINTS = 2
-
-  def initialize(pos, board, color)
-    super(pos, board, color)
-  end
-end
-
-class King < SteppingPiece
-  DELTAS = [[1,0], [0,-1], [-1,0], [0,1], [1,1], [1,-1], [-1,1], [-1,-1]]
-  REPRESENTATION = {:white => "\u2654", :black => "\u265A"}
-  POINTS = 25
-
-  def initialize(pos, board, color)
-    super(pos, board, color)
-  end
-end

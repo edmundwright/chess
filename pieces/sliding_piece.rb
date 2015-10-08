@@ -17,33 +17,3 @@ class SlidingPiece < Piece
     moves
   end
 end
-
-class Bishop < SlidingPiece
-  DELTAS = [[1,1], [1,-1], [-1,1], [-1,-1]]
-  REPRESENTATION = {:white => "\u2657", :black => "\u265D"}
-  POINTS = 6
-
-  def initialize(pos, board, color)
-    super(pos, board, color)
-  end
-end
-
-class Rook < SlidingPiece
-  DELTAS = [[1,0], [0,-1], [-1,0], [0,1]]
-  REPRESENTATION = {:white => "\u2656", :black => "\u265C"}
-  POINTS = 10
-
-  def initialize(pos, board, color)
-    super(pos, board, color)
-  end
-end
-
-class Queen < SlidingPiece
-  DELTAS = [[1,0], [0,-1], [-1,0], [0,1], [1,1], [1,-1], [-1,1], [-1,-1]]
-  REPRESENTATION = {:white => "\u2655", :black => "\u265B"}
-  POINTS = 20
-
-  def initialize(pos, board, color)
-    super(pos, board, color)
-  end
-end

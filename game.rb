@@ -1,15 +1,16 @@
 require_relative 'chess_error'
 require_relative 'board'
 require_relative 'players/human_player'
-require_relative 'players/computer_player'
+require_relative 'players/stupid_computer_player'
+require_relative 'players/smart_computer_player'
 
 class Game
   attr_reader :board, :current_player, :other_player
   attr_accessor :turns_played
-  def initialize
-    @board = Board.setup_new_board
-    @current_player = SmartComputerPlayer.new(board, :white, 2)
-    @other_player = StupidComputerPlayer.new(board, :black)
+  def initialize(board, player_white, player_black)
+    @board = board
+    @current_player = player_white
+    @other_player = player_black
     @turns_played = 0
   end
 
@@ -52,5 +53,27 @@ class Game
 end
 
 if __FILE__ == $PROGRAM_NAME
-  Game.new.play
+  board = Board.setup_new_board
+
+  players = {}
+  [:white, :black].each do |color|
+    puts
+    puts "Who will play #{color.to_s.upcase}? Enter h for a human player, s for"
+    puts "a stupid computer player, and c for a (somewhat) clever"
+    puts "computer player."
+    player_choice = gets.chomp
+    if player_choice.downcase == "h"
+      players[color] = HumanPlayer.new(board, color)
+    elsif player_choice.downcase == "s"
+      players[color] = StupidComputerPlayer.new(board, color)
+    else
+      puts "How clever should it be? Enter a positive integer. Note"
+      puts "that < 2 will still be pretty stupid, and > 3 will take"
+      puts "a very long time to choose moves."
+      cleverness = gets.chomp.to_i
+      players[color] = SmartComputerPlayer.new(board, color, cleverness)
+    end
+  end
+
+  Game.new(board, players[:white], players[:black]).play
 end
