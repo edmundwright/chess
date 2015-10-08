@@ -13,6 +13,6 @@ Command line chess game with somewhat intelligent computer player.
 
 ## Usage
 
-Run `ruby game.rb` and follow prompts.
+Run `ruby lib/game.rb` and follow prompts.
 
 [screenshot]: ./screenshot.jpg
