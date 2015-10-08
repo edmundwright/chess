@@ -6,7 +6,7 @@ Command line chess game with somewhat intelligent computer player.
 
 ## Features
 
-- Computer player chooses move based on truncated game tree
+- Computer player chooses moves based on truncated game tree
 - Level of truncation customizable to allow computer players of varying intelligences
 - Utilizes multiple levels of class inheritance (see [`Piece` and subclasses](./pieces))
 
