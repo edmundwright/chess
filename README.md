@@ -8,7 +8,7 @@ Command line chess game with somewhat intelligent computer player.
 
 - Computer player chooses moves based on truncated game tree
 - Level of truncation customizable to allow computer players of varying intelligences
-- Utilizes multiple levels of class inheritance (see [`Piece` and subclasses](./pieces))
+- Utilizes multiple levels of class inheritance (see [`Piece` and subclasses](./lib/pieces))
 
 
 ## Usage
